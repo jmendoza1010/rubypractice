@@ -1,6 +1,16 @@
 <div class="jumbotron center">
-<h1>Welcome to My First App</h1>
-<p>I'm so excited to be working on this app! In the weeks to come I will be adding and tweaking things to perfect this site. Stay tuned!</p>
-<%= link_to "Login", new_user_session_path, class: 'btn btn-primary' %>
-<%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %>
+    <h1>Welcome to My First App</h1>
+    
+    <p>I'm so excited to be working on this app! In the weeks to come I will be adding and tweaking things to perfect this site. Stay tuned!</p>
+
+    <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-primary' %>
+        
+    <% else %>
+        <%= link_to "Login", new_user_session_path, class: 'btn btn-primary' %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %>
+        
+    <% end %>
+
 </div>
