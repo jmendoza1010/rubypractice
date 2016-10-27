@@ -4,7 +4,8 @@
     <p>I'm so excited to be working on this app! In the weeks to come I will be adding and tweaking things to perfect this site. Stay tuned!</p>
 
     <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+        <%= link_to "New Post", new_post_path, class: 'btn btn-primary' %> 
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
         <%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-primary' %>
         
     <% else %>
