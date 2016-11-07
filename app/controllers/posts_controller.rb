@@ -64,8 +64,8 @@ class PostsController < ApplicationController
   end
 
   def correct_user
-    @post = current_user.posts.find_by(id: params{:id})
-      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
+    @post = current_user.posts.find_by(id: params[:id])
+      redirect_to posts_path, notice: "Not authorized to edit this pin" if @post.nil?
   end    
 
   private
@@ -76,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:description)
+      params.require(:post).permit(:description, :image, :name)
     end
 end

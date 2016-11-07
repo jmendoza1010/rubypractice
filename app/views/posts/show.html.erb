@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><strong>Description:</strong></div>
+  <div class="panel-heading"><strong></strong></div>
 
   <div class="panel panel-body">
     <p>
-      <%= @post.description %>
+      <%= image_tag @post.image.url(:medium) %><br>
+      <%= @post.description %><br>
+      <%= @post.user.name %>
     </p>
   </div>
   
